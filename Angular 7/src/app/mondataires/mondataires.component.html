@@ -1,0 +1,42 @@
+<div class="container custom-container-2">
+  
+    <!-- Show it when there is no Mondataires -->
+    <div class="no-data text-center" *ngIf="Mondataires.length == 0">
+      <p>There is no mondataires added yet!</p>
+    </div>
+  
+    <!-- data list table, it hides when there is no data -->
+    <div *ngIf="Mondataires.length !== 0">
+      <h3 class="mb-3 text-center">Mondataire List</h3>
+  
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">identity</th>
+              <th scope="col">zipcode</th>
+              <th scope="col">dep</th>
+              <th scope="col">siren</th>
+              <th scope="col">nic</th>
+              <th scope="col">adresse</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let mondataire of Mondataires">
+              <td>{{mondataire.id}}</td>
+              <td>{{mondataire.identity}}</td>
+              <td>{{mondataire.zipcode}}</td>
+              <td>{{mondataire.dep}}</td>
+              <td>{{mondataire.siren}}</td>
+              <td>{{mondataire.nic}}</td>
+              <td>{{mondataire.adresse}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>

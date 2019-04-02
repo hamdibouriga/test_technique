@@ -1,0 +1,44 @@
+<div class="container custom-container-2">
+  
+    <!-- Show it when there is no data -->
+    <div class="no-data text-center" *ngIf="Annonces.length == 0">
+      <p>There is no annonces added yet!</p>
+    </div>
+  
+    <!-- data list table, it hides when there is no data -->
+    <div *ngIf="Annonces.length !== 0">
+      <h3 class="mb-3 text-center">Annonces List</h3>
+  
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Annonce ID</th>
+              <th scope="col">dateJugement</th>
+              <th scope="col">siren</th>
+              <th scope="col">nic</th>
+              <th scope="col">commentaires</th>
+              <th scope="col">dep</th>
+              <th scope="col">createdAt</th>              
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let annonce of Annonces">
+              <td>{{annonce.id}}</td>
+              <td>{{annonce.annonceId}}</td>
+              <td>{{annonce.dateJugement}}</td>
+              <td>{{annonce.siren}}</td>
+              <td>{{annonce.nic}}</td>
+              <td>{{annonce.commentaires}}</td>
+              <td>{{annonce.dep}}</td>
+              <td>{{annonce.createdAt}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>
