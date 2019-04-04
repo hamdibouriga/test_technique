@@ -53,9 +53,9 @@ class AnnoncesRepository extends ServiceEntityRepository
         return $this->getEntityManager()
         ->createQuery("SELECT a 
         FROM App:Annonces  a 
-        WHERE a.commentaires LIKE :test
+        WHERE Regexp(a.commentaires , :test)=true
         GROUP BY a.annonce_id")
-        ->setParameter('test', '%'.$identity.'%')                    
+        ->setParameter('test', $identity)                    
         ->getResult();
     }
 
